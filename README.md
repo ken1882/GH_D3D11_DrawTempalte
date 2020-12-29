@@ -1,0 +1,1 @@
+Based on https://guidedhacking.com/threads/directx11-how-to-hook-direct3d11-draw-template.15252/#post-97432 for non-Visual Studio builds.
