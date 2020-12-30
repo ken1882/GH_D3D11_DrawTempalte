@@ -302,7 +302,7 @@ bool rD3D11::DummyDeviceGetPresent(){
 	void** pVMT = *(void***)pSwapchain;
 
 	// Get Present's address out of vmt
-	oPresent = (fnPresent)(pVMT[(UINT)IDXGISwapChainVMT::Present]);
+	oPresent = (void*)((fnPresent)(pVMT[(UINT)IDXGISwapChainVMT::Present]));
 
 	// got what we need, we can release device and swapchain now
 	//safe_release(pSwapchain);
