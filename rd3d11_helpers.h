@@ -1,7 +1,6 @@
 #ifndef __RD3D11_HELPERS__
 #define __RD3D11_HELPERS__
 
-#include <d3dcompiler.h>
 #include <DirectXMath.h>
 #include <DirectXColors.h>
 

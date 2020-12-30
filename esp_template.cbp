@@ -40,8 +40,19 @@
 				</Linker>
 			</Target>
 		</Build>
+		<Unit filename="hook.cpp" />
+		<Unit filename="hook.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
+		<Unit filename="mem.cpp" />
+		<Unit filename="mem.h" />
+		<Unit filename="rd3d11.cpp" />
+		<Unit filename="rd3d11.h" />
+		<Unit filename="rd3d11_helpers.h" />
+		<Unit filename="rd3d11_vmt_indcies.h" />
+		<Unit filename="shader.h" />
+		<Unit filename="util.cpp" />
+		<Unit filename="util.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

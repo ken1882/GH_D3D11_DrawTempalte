@@ -13,6 +13,12 @@
 #include <iomanip>
 #include <ShlObj.h>
 
+class rD3D11;
+class Hook;
+
+extern rD3D11 rd11;
+static bool bDrawingEnabled = false;
+
 /*  To use this exported function of dll, include this header
  *  in your project.
  */

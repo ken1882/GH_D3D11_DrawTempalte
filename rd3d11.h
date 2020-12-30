@@ -4,16 +4,17 @@
 #include <functional>
 #include <dxgi.h>
 #include <d3d11.h>
+#include <d3dcompiler.h>
 #include "main.h"
 #include "rd3d11_helpers.h"
 #include "rd3d11_vmt_indcies.h"
 #include "shader.h"
 #include "util.h"
 #include "hook.h"
+#pragma comment(lib, "d3d11.lib")
+#pragma comment(lib, "d3dcompiler.lib")
 
 HRESULT __stdcall hkPresent(IDXGISwapChain* pThis, UINT SyncInterval, UINT Flags);
-
-class rD3D11;
 
 class rD3D11{
 public:
@@ -55,9 +56,9 @@ public:
 	bool InitD3DDraw(IDXGISwapChain* pSwapchain); //call this inside the Present() hook
 
 	void BeginDraw();
-	void DrawLine(float x, float y, float x2, float y2, D3DCOLORVALUE color);
-	void DrawLineWH(float x, float y, float width, float height, D3DCOLORVALUE color); //uses 1 vertex + width and height
-	void DrawBox(float x, float y, float width, float height, D3DCOLORVALUE color);
+	void DrawLine(float x, float y, float x2, float y2, XMVECTORF32 color);
+	void DrawLineWH(float x, float y, float width, float height, XMVECTORF32 color); //uses 1 vertex + width and height
+	void DrawBox(float x, float y, float width, float height, XMVECTORF32 color);
 	void TestRender();
 
 	void CleanupD3D();

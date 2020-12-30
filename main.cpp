@@ -1,9 +1,24 @@
 #include "main.h"
 #include "rd3d11.h"
+#include "sshot_cleaner.h"
+
+rD3D11 rd11;
 
 DWORD WINAPI MainThread(HINSTANCE hModule){
 
     return 0;
+}
+
+
+HRESULT __stdcall hkPresent(IDXGISwapChain* pThis, UINT SyncInterval, UINT Flags){
+	if (!rd11.pDevice || rd11.pSwapchain != pThis){
+		rd11.InitD3DDraw(pThis);
+	}
+
+	//enable this to test or debug viewport
+	rd11.TestRender();
+
+	return rd11.oPresentTramp(pThis, SyncInterval, Flags);
 }
 
 extern "C" DLL_EXPORT BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved){
